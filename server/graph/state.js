@@ -43,6 +43,18 @@ const CodeArchaeologistState = Annotation.Root({
     default: () => null,
   }),
 
+  // ── Review & Validation Agent output ──────────────────────
+  validation: Annotation({
+    reducer: (_prev, next) => next,
+    default: () => null,
+  }),
+
+  // ── Iteration Feedback ───────────────────────────────────
+  feedback: Annotation({
+    reducer: (_prev, next) => next,
+    default: () => null,
+  }),
+
   // ── Workflow metadata ─────────────────────────────────────
   iteration: Annotation({
     reducer: (_prev, next) => next,

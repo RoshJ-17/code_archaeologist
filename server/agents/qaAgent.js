@@ -89,7 +89,8 @@ export async function runQA(repoPath, bugReport, diagnosis, patch, options = {})
   }
 
   // 4. If LLM is provided or live execution is possible, evaluate with LLM
-  if (options.llm || ChatGoogleGenerativeAI) {
+  const hasApiKey = Boolean(process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY || options.apiKey);
+  if (options.llm || (ChatGoogleGenerativeAI && hasApiKey)) {
     const llm = options.llm || new ChatGoogleGenerativeAI({
       model: options.model || LLM_MODEL,
       temperature: LLM_TEMPERATURE,
