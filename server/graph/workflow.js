@@ -95,4 +95,43 @@ export async function runCodeArchaeologist(repositoryPath, bugReport, initialInp
   return result;
 }
 
+import path from "node:path";
+
 export const graph = buildWorkflow();
+
+// ── CLI entry point ─────────────────────────────────────────
+
+async function main() {
+  const args = process.argv.slice(2);
+  const repoIdx = args.indexOf("--repo");
+  const bugIdx = args.indexOf("--bug");
+
+  const repoPath = repoIdx !== -1 ? args[repoIdx + 1] : "test-repositories/discount-bug";
+  const bugReport = bugIdx !== -1 ? args[bugIdx + 1] : "Customers purchasing exactly 10 items are not receiving the bulk discount.";
+
+  const absoluteRepoPath = path.resolve(process.cwd(), repoPath);
+  const result = await runCodeArchaeologist(absoluteRepoPath, bugReport);
+
+  console.log("\n=================================================");
+  console.log("FINAL MULTI-AGENT EXECUTION SUMMARY");
+  console.log("=================================================");
+  console.log(`Repository Analysis: ${result.repository_analysis ? "Completed" : "Failed"}`);
+  console.log(`Diagnosis: ${result.diagnosis?.suspectedFile || "N/A"} - ${result.diagnosis?.rootCause || "N/A"}`);
+  console.log(`Patch Status: ${result.patch?.status || "N/A"}`);
+  console.log(`QA Status: ${result.test_results?.status || "N/A"}`);
+  console.log(`Validation Status: ${result.validation?.status || "N/A"}`);
+  console.log(`Reason: ${result.validation?.reason || "N/A"}`);
+  console.log(`Total Iterations: ${result.iteration}`);
+  console.log("=================================================\n");
+}
+
+const isDirectRun =
+  process.argv[1] &&
+  import.meta.url.endsWith(process.argv[1].replace(/\\/g, "/"));
+
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error("Fatal:", err);
+    process.exit(1);
+  });
+}
