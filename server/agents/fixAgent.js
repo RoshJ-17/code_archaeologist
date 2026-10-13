@@ -75,10 +75,18 @@ export async function generateFix(repoPath, bugReport, diagnosis, options = {}) 
 
   // 5. Build prompt
   const systemPrompt = getSystemPrompt();
-  const userPrompt = getUserPrompt(bugReport, diagnosis, {
+  const userPrompt = getUserPrompt(
+  bugReport,
+  diagnosis,
+  {
     [suspectedFile]: originalFileContent,
-  });
-
+  },
+  {
+    iteration: options.iteration ?? 1,
+    previousQA: options.previousQA,
+    previousFeedback: options.previousFeedback,
+  }
+);
   // 6. Invoke LLM (or injected mock)
   const llm = options.llm || new ChatGoogleGenerativeAI({
     model: options.model || LLM_MODEL,
@@ -230,13 +238,16 @@ export async function fixAgentNode(state) {
       throw new Error("state.diagnosis is missing");
     }
 
-    const patch = await generateFix(
-      state.repository_path,
-      state.bug_report,
-      state.diagnosis
-    );
-
-    return { patch, error: null };
+const patch = await generateFix(
+  state.repository_path,
+  state.bug_report,
+  state.diagnosis,
+  {
+    iteration: (state.iteration ?? 0) + 1,
+    previousQA: state.test_results ?? null,
+    previousFeedback: state.feedback ?? null,
+  }
+);    return { patch, error: null };
   } catch (err) {
     console.error("[Fix Agent] Error:", err.message);
     return {
