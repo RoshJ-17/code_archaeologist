@@ -1,0 +1,157 @@
+/**
+ * CODE ARCHAEOLOGIST — Design Tokens
+ * Digital Forensics & Software Archaeology Aesthetic
+ */
+
+:root {
+  /* ── Background & Surfaces ─────────────────────────────────── */
+  --color-obsidian: #0B0C10;
+  --color-surface-base: #12131A;
+  --color-surface-card: #181922;
+  --color-surface-elevated: #20222D;
+  --color-surface-overlay: #272938;
+
+  /* ── Technical Borders ─────────────────────────────────────── */
+  --color-border-subtle: #1E202B;
+  --color-border-default: #2A2D3C;
+  --color-border-bright: #3D4258;
+  --color-border-accent: rgba(214, 164, 93, 0.4);
+
+  /* ── High-Contrast Bone-White Text ─────────────────────────── */
+  --color-text-bone: #F5F6F8;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+  --color-text-faint: #4B5563;
+
+  /* ── Signature Forensic Accents ────────────────────────────── */
+  /* Artifact Amber: brand signature, primary CTA, discovery */
+  --color-amber-primary: #D6A45D;
+  --color-amber-hover: #E5B773;
+  --color-amber-active: #C18F49;
+  --color-amber-glow: rgba(214, 164, 93, 0.18);
+  --color-amber-surface: rgba(214, 164, 93, 0.08);
+
+  /* Signal Violet: diagnosis, forensic intelligence, root cause */
+  --color-violet-primary: #8B7CFF;
+  --color-violet-hover: #9E91FF;
+  --color-violet-glow: rgba(139, 124, 255, 0.18);
+  --color-violet-surface: rgba(139, 124, 255, 0.08);
+
+  /* Verified Teal: validation, clean pass, verified repair */
+  --color-teal-primary: #45C9A5;
+  --color-teal-hover: #57D8B5;
+  --color-teal-glow: rgba(69, 201, 165, 0.18);
+  --color-teal-surface: rgba(69, 201, 165, 0.08);
+
+  /* Alert States: used strictly for genuine warnings and failures */
+  --color-alert-red: #EF4444;
+  --color-alert-red-glow: rgba(239, 68, 68, 0.2);
+  --color-alert-red-surface: rgba(239, 68, 68, 0.08);
+
+  --color-alert-orange: #F59E0B;
+  --color-alert-orange-glow: rgba(245, 158, 11, 0.2);
+  --color-alert-orange-surface: rgba(245, 158, 11, 0.08);
+
+  /* ── Typography ────────────────────────────────────────────── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', "Cascadia Code", "Fira Code", monospace;
+
+  /* ── Spacing Scale ─────────────────────────────────────────── */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+
+  /* ── Radius & Transitions ──────────────────────────────────── */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Forensic Shadows & Grid ───────────────────────────────── */
+  --shadow-elevation: 0 4px 20px -2px rgba(0, 0, 0, 0.65);
+  --shadow-glow-amber: 0 0 16px -2px rgba(214, 164, 93, 0.35);
+  --shadow-glow-violet: 0 0 16px -2px rgba(139, 124, 255, 0.35);
+  --shadow-glow-teal: 0 0 16px -2px rgba(69, 201, 165, 0.35);
+}
+
+/* ── Reset & Core Defaults ───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-obsidian);
+  color: var(--color-text-bone);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Forensic Topographic & Grid Canvas ──────────────────────── */
+body {
+  background-color: var(--color-obsidian);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(139, 124, 255, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(214, 164, 93, 0.03) 0%, transparent 50%),
+    linear-gradient(to right, rgba(42, 45, 60, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 45, 60, 0.15) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  background-attachment: fixed;
+}
+
+/* ── Custom Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-bright);
+  border-radius: var(--radius-xs);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber-primary);
+}
+
+/* ── Selection ───────────────────────────────────────────────── */
+::selection {
+  background: rgba(214, 164, 93, 0.3);
+  color: #FFFFFF;
+}
+
+/* ── Common Forensic Utility Classes ─────────────────────────── */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.trench-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

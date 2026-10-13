@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Archaeological Excavation Grid Background Ring -->
+  <circle cx="22" cy="22" r="18" stroke="#2A2D3A" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <circle cx="22" cy="22" r="14" stroke="#1E202B" stroke-width="1"/>
+  
+  <!-- Outer Code Bracket Left -->
+  <path d="M 8 16 L 4 22 L 8 28" stroke="#8B7CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Outer Code Bracket Right -->
+  <path d="M 36 16 L 40 22 L 36 28" stroke="#8B7CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Magnifying Glass Lens Outer Rim -->
+  <circle cx="22" cy="22" r="11" stroke="#D6A45D" stroke-width="2.5" fill="#14151D"/>
+
+  <!-- Excavation Geological Strata (Layer 1 - Topsoil) -->
+  <path d="M 14 18 Q 22 17 30 19" stroke="#D6A45D" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Excavation Geological Strata (Layer 2 - Deep Forensic Substrate) -->
+  <path d="M 13 22 Q 22 24 31 22" stroke="#8B7CFF" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+  
+  <!-- Excavation Geological Strata (Layer 3 - Bedrock Bedding) -->
+  <path d="M 15 26 Q 22 25 29 27" stroke="#45C9A5" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Lens Center Forensic Reticle Dot -->
+  <circle cx="22" cy="22" r="1.5" fill="#D6A45D"/>
+
+  <!-- Heavy Excavator Tool Handle -->
+  <path d="M 30 30 L 42 42" stroke="#D6A45D" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 36 36 L 43 43" stroke="#8B7CFF" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
