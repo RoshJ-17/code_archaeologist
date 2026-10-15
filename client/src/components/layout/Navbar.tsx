@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 fontSize: '9px',
                 padding: '1px 5px',
                 borderRadius: '2px',
-                background: 'rgba(214, 164, 93, 0.15)',
+                background: 'var(--color-amber-surface)',
                 color: 'var(--color-amber-primary)',
                 fontFamily: 'var(--font-mono)',
                 fontWeight: 600,
@@ -86,15 +86,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>FORENSICS LIVE</span>
             </div>
           ) : (
-            <div className="status-pill" style={{ borderColor: 'rgba(245, 158, 11, 0.4)', color: 'var(--color-alert-orange)' }} title="API Key not configured in environment">
+            <div className="status-pill" style={{ borderColor: 'currentColor', color: 'var(--color-alert-orange)' }} title="API Key not configured in environment">
               <span className="status-dot warn" />
               <AlertTriangle size={12} />
               <span>API KEY UNSET</span>
             </div>
           )
         ) : (
-          <div className="status-pill" style={{ borderColor: 'rgba(239, 68, 68, 0.4)', color: 'var(--color-alert-red)' }} title="Cannot reach backend at /api">
-            <span className="status-dot" style={{ backgroundColor: 'var(--color-alert-red)', boxShadow: '0 0 8px var(--color-alert-red)' }} />
+          <div className="status-pill error" title="Cannot reach backend at /api">
+            <span className="status-dot" style={{ backgroundColor: 'var(--color-alert-red)' }} />
             <span>BACKEND DISCONNECTED</span>
           </div>
         )}

@@ -221,11 +221,11 @@ export const WorkspacePage: React.FC<WorkspacePageProps> = ({
       {run.error && (
         <div
           style={{
-            background: 'rgba(239, 68, 68, 0.1)',
+            background: 'var(--color-alert-red-surface)',
             border: '1px solid var(--color-alert-red)',
             borderRadius: 'var(--radius-md)',
             padding: '16px',
-            color: '#FCA5A5',
+            color: 'var(--color-alert-red)',
             display: 'flex',
             alignItems: 'flex-start',
             gap: '12px',
@@ -561,8 +561,8 @@ export const WorkspacePage: React.FC<WorkspacePageProps> = ({
 
                     {/* Expected vs Actual */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
-                      <div className="qa-card-box" style={{ borderColor: 'rgba(69, 201, 165, 0.3)' }}>
-                        <div className="qa-card-title" style={{ color: 'var(--color-teal-primary)' }}>
+                      <div className="qa-card-box" style={{ borderColor: 'var(--color-success)' }}>
+                        <div className="qa-card-title" style={{ color: 'var(--color-success)' }}>
                           Expected Behavior
                         </div>
                         <div style={{ fontSize: '12px', color: 'var(--color-text-primary)', marginTop: '4px' }}>
@@ -570,7 +570,7 @@ export const WorkspacePage: React.FC<WorkspacePageProps> = ({
                         </div>
                       </div>
 
-                      <div className="qa-card-box" style={{ borderColor: 'rgba(239, 68, 68, 0.3)' }}>
+                      <div className="qa-card-box" style={{ borderColor: 'var(--color-alert-red)' }}>
                         <div className="qa-card-title" style={{ color: 'var(--color-alert-red)' }}>
                           Observed Anomaly
                         </div>
@@ -748,11 +748,11 @@ export const WorkspacePage: React.FC<WorkspacePageProps> = ({
                             <div style={{ color: 'var(--color-amber-primary)', marginBottom: '6px', fontWeight: 600 }}>
                               {change.file}: {change.reason}
                             </div>
-                            <div style={{ color: '#FCA5A5', background: 'rgba(239, 68, 68, 0.08)', padding: '6px', borderRadius: '2px', marginBottom: '4px' }}>
+                            <div style={{ color: 'var(--color-alert-red)', background: 'var(--color-alert-red-surface)', padding: '6px', borderRadius: 'var(--radius-xs)', marginBottom: '4px' }}>
                               <span style={{ userSelect: 'none', marginRight: '6px' }}>-</span>
                               {change.originalCode}
                             </div>
-                            <div style={{ color: '#6EE7B7', background: 'rgba(69, 201, 165, 0.08)', padding: '6px', borderRadius: '2px' }}>
+                            <div style={{ color: 'var(--color-success)', background: 'var(--color-success-surface)', padding: '6px', borderRadius: 'var(--radius-xs)' }}>
                               <span style={{ userSelect: 'none', marginRight: '6px' }}>+</span>
                               {change.fixedCode}
                             </div>
@@ -879,12 +879,12 @@ export const WorkspacePage: React.FC<WorkspacePageProps> = ({
                             key={i}
                             style={{
                               background: 'var(--color-alert-red-surface)',
-                              border: '1px solid rgba(239, 68, 68, 0.4)',
+                              border: '1px solid var(--color-alert-red)',
                               borderRadius: 'var(--radius-xs)',
                               padding: '8px 12px',
                               fontFamily: 'var(--font-mono)',
                               fontSize: '11px',
-                              color: '#FCA5A5',
+                              color: 'var(--color-alert-red)',
                             }}
                           >
                             <strong>{f.test}:</strong> {f.reason}

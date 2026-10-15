@@ -1,57 +1,58 @@
 /**
  * CODE ARCHAEOLOGIST — Design Tokens
- * Digital Forensics & Software Archaeology Aesthetic
+ * Professional field-notes palette for software archaeology
  */
 
 :root {
   /* ── Background & Surfaces ─────────────────────────────────── */
-  --color-obsidian: #0B0C10;
-  --color-surface-base: #12131A;
-  --color-surface-card: #181922;
-  --color-surface-elevated: #20222D;
-  --color-surface-overlay: #272938;
+  --color-obsidian: #F3F7F0;
+  --color-surface-base: #FFFFFF;
+  --color-surface-card: #FFFFFF;
+  --color-surface-elevated: #EDF3EA;
+  --color-surface-overlay: #E4EDE1;
 
   /* ── Technical Borders ─────────────────────────────────────── */
-  --color-border-subtle: #1E202B;
-  --color-border-default: #2A2D3C;
-  --color-border-bright: #3D4258;
-  --color-border-accent: rgba(214, 164, 93, 0.4);
+  --color-border-subtle: #E3EAE0;
+  --color-border-default: #D3DED0;
+  --color-border-bright: #BDCEBA;
+  --color-border-accent: rgba(57, 111, 66, 0.24);
 
   /* ── High-Contrast Bone-White Text ─────────────────────────── */
-  --color-text-bone: #F5F6F8;
-  --color-text-primary: #E5E7EB;
-  --color-text-secondary: #9CA3AF;
-  --color-text-muted: #6B7280;
-  --color-text-faint: #4B5563;
+  --color-text-bone: #1D3525;
+  --color-text-primary: #2D4433;
+  --color-text-secondary: #526B58;
+  --color-text-muted: #718574;
+  --color-text-faint: #93A394;
 
   /* ── Signature Forensic Accents ────────────────────────────── */
-  /* Artifact Amber: brand signature, primary CTA, discovery */
-  --color-amber-primary: #D6A45D;
-  --color-amber-hover: #E5B773;
-  --color-amber-active: #C18F49;
-  --color-amber-glow: rgba(214, 164, 93, 0.18);
-  --color-amber-surface: rgba(214, 164, 93, 0.08);
+  /* Legacy token names are retained while the UI uses a forest-green accent. */
+  --color-amber-primary: #397A47;
+  --color-amber-hover: #2F683B;
+  --color-amber-active: #345F3D;
+  --color-amber-glow: rgba(57, 122, 71, 0.12);
+  --color-amber-surface: #EAF3E8;
 
-  /* Signal Violet: diagnosis, forensic intelligence, root cause */
-  --color-violet-primary: #8B7CFF;
-  --color-violet-hover: #9E91FF;
-  --color-violet-glow: rgba(139, 124, 255, 0.18);
-  --color-violet-surface: rgba(139, 124, 255, 0.08);
+  --color-violet-primary: #397A47;
+  --color-violet-hover: #2F683B;
+  --color-violet-glow: rgba(57, 122, 71, 0.12);
+  --color-violet-surface: #EAF3E8;
 
-  /* Verified Teal: validation, clean pass, verified repair */
-  --color-teal-primary: #45C9A5;
-  --color-teal-hover: #57D8B5;
-  --color-teal-glow: rgba(69, 201, 165, 0.18);
-  --color-teal-surface: rgba(69, 201, 165, 0.08);
+  --color-teal-primary: #287A43;
+  --color-teal-hover: #236A3A;
+  --color-teal-glow: rgba(40, 122, 67, 0.12);
+  --color-teal-surface: #E6F3E8;
+  --color-success: #287A43;
+  --color-success-surface: #E6F3E8;
 
   /* Alert States: used strictly for genuine warnings and failures */
-  --color-alert-red: #EF4444;
-  --color-alert-red-glow: rgba(239, 68, 68, 0.2);
-  --color-alert-red-surface: rgba(239, 68, 68, 0.08);
+  --color-alert-red: #C43D46;
+  --color-alert-red-glow: rgba(196, 61, 70, 0.12);
+  --color-alert-red-surface: #FCEBED;
 
-  --color-alert-orange: #F59E0B;
-  --color-alert-orange-glow: rgba(245, 158, 11, 0.2);
-  --color-alert-orange-surface: rgba(245, 158, 11, 0.08);
+  /* Warnings and inconclusive states remain neutral; red is reserved for errors. */
+  --color-alert-orange: #647467;
+  --color-alert-orange-glow: rgba(100, 116, 103, 0.08);
+  --color-alert-orange-surface: #EDF1EC;
 
   /* ── Typography ────────────────────────────────────────────── */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -68,18 +69,18 @@
   --space-3xl: 48px;
 
   /* ── Radius & Transitions ──────────────────────────────────── */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 9px;
+  --radius-lg: 12px;
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 220ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ── Forensic Shadows & Grid ───────────────────────────────── */
-  --shadow-elevation: 0 4px 20px -2px rgba(0, 0, 0, 0.65);
-  --shadow-glow-amber: 0 0 16px -2px rgba(214, 164, 93, 0.35);
-  --shadow-glow-violet: 0 0 16px -2px rgba(139, 124, 255, 0.35);
-  --shadow-glow-teal: 0 0 16px -2px rgba(69, 201, 165, 0.35);
+  --shadow-elevation: 0 8px 24px -12px rgba(30, 62, 36, 0.2);
+  --shadow-glow-amber: 0 0 0 3px rgba(57, 122, 71, 0.12);
+  --shadow-glow-violet: 0 0 0 3px rgba(57, 122, 71, 0.12);
+  --shadow-glow-teal: 0 0 0 3px rgba(57, 122, 71, 0.12);
 }
 
 /* ── Reset & Core Defaults ───────────────────────────────────── */
@@ -104,13 +105,7 @@ html, body {
 /* ── Forensic Topographic & Grid Canvas ──────────────────────── */
 body {
   background-color: var(--color-obsidian);
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(139, 124, 255, 0.04) 0%, transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(214, 164, 93, 0.03) 0%, transparent 50%),
-    linear-gradient(to right, rgba(42, 45, 60, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42, 45, 60, 0.15) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-  background-attachment: fixed;
+  background-image: none;
 }
 
 /* ── Custom Scrollbar ────────────────────────────────────────── */
@@ -131,7 +126,7 @@ body {
 
 /* ── Selection ───────────────────────────────────────────────── */
 ::selection {
-  background: rgba(214, 164, 93, 0.3);
+  background: rgba(57, 122, 71, 0.22);
   color: #FFFFFF;
 }
 

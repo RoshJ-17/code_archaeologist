@@ -9,13 +9,13 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  border-left: 6px solid var(--color-amber-primary);
 }
 
 /* ── Top Header Navigation ───────────────────────────────────── */
 .top-nav {
   height: 60px;
-  background-color: rgba(18, 19, 26, 0.95);
-  backdrop-filter: blur(8px);
+  background-color: var(--color-surface-base);
   border-bottom: 1px solid var(--color-border-subtle);
   display: flex;
   align-items: center;
@@ -107,9 +107,9 @@
 }
 
 .nav-item-btn.active {
-  background: var(--color-surface-elevated);
+  background: var(--color-amber-surface);
   color: var(--color-amber-primary);
-  border: 1px solid var(--color-border-bright);
+  border: 1px solid var(--color-border-default);
 }
 
 .nav-system-status {
@@ -132,8 +132,13 @@
 }
 
 .status-pill.online {
-  border-color: rgba(69, 201, 165, 0.4);
+  border-color: var(--color-success);
   color: var(--color-teal-primary);
+}
+
+.status-pill.error {
+  border-color: var(--color-alert-red);
+  color: var(--color-alert-red);
 }
 
 .status-dot {
@@ -141,7 +146,7 @@
   height: 6px;
   border-radius: 50%;
   background-color: var(--color-teal-primary);
-  box-shadow: 0 0 8px var(--color-teal-primary);
+  box-shadow: none;
 }
 
 .status-dot.warn {
@@ -162,12 +167,7 @@
 .strata-hero-visual {
   width: 100%;
   height: 52px;
-  background: linear-gradient(
-    180deg,
-    rgba(214, 164, 93, 0.08) 0%,
-    rgba(139, 124, 255, 0.08) 50%,
-    rgba(69, 201, 165, 0.08) 100%
-  );
+  background: var(--color-surface-card);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
   margin-bottom: var(--space-xl);
@@ -188,12 +188,12 @@
 
 .strata-line.amber {
   top: 17px;
-  background: linear-gradient(90deg, transparent 0%, rgba(214, 164, 93, 0.3) 25%, rgba(214, 164, 93, 0.6) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(57, 122, 71, 0.3) 25%, rgba(57, 122, 71, 0.6) 50%, transparent 100%);
 }
 
 .strata-line.violet {
   top: 34px;
-  background: linear-gradient(90deg, transparent 0%, rgba(139, 124, 255, 0.3) 40%, rgba(139, 124, 255, 0.6) 70%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(57, 122, 71, 0.24) 40%, rgba(57, 122, 71, 0.5) 70%, transparent 100%);
 }
 
 .strata-badge {
@@ -239,7 +239,8 @@
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-text-bone);
+  color: var(--color-amber-primary);
+  font-family: Georgia, "Times New Roman", serif;
   margin-bottom: var(--space-xs);
 }
 
@@ -436,7 +437,7 @@
 
 .btn-primary-excavate {
   background: var(--color-amber-primary);
-  color: #0A0A0E;
+  color: #FFFFFF;
   border: 1px solid var(--color-amber-hover);
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
@@ -450,12 +451,12 @@
   justify-content: center;
   gap: var(--space-sm);
   transition: all var(--transition-fast);
-  box-shadow: 0 2px 10px rgba(214, 164, 93, 0.25);
+  box-shadow: var(--shadow-elevation);
 }
 
 .btn-primary-excavate:hover:not(:disabled) {
   background: var(--color-amber-hover);
-  box-shadow: 0 4px 16px rgba(214, 164, 93, 0.4);
+  box-shadow: var(--shadow-elevation);
   transform: translateY(-1px);
 }
 
@@ -554,7 +555,7 @@
   font-size: 10px;
   color: var(--color-amber-primary);
   background: var(--color-amber-surface);
-  border: 1px solid rgba(214, 164, 93, 0.3);
+  border: 1px solid var(--color-border-default);
   padding: 2px 6px;
   border-radius: var(--radius-xs);
 }
@@ -641,9 +642,9 @@
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(214, 164, 93, 0.5); }
-  70% { box-shadow: 0 0 0 8px rgba(214, 164, 93, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(214, 164, 93, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(57, 122, 71, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(57, 122, 71, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(57, 122, 71, 0); }
 }
 
 .agent-connector-line {
@@ -796,18 +797,18 @@
 
 /* ── Restoration Warning Alert ───────────────────────────────── */
 .restoration-warning-box {
-  background: rgba(239, 68, 68, 0.12);
+  background: var(--color-alert-red-surface);
   border: 1px solid var(--color-alert-red);
   border-radius: var(--radius-md);
   padding: var(--space-md);
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  color: #FCA5A5;
+  color: var(--color-alert-red);
 }
 
 .restoration-warning-box strong {
-  color: #FFFFFF;
+  color: var(--color-alert-red);
 }
 
 /* ── Context Sensitive Tabs Bar ──────────────────────────────── */
@@ -1045,18 +1046,18 @@
 }
 
 .diff-line.addition {
-  background: rgba(69, 201, 165, 0.12);
-  color: #6EE7B7;
+  background: var(--color-success-surface);
+  color: var(--color-success);
 }
 
 .diff-line.deletion {
-  background: rgba(239, 68, 68, 0.12);
-  color: #FCA5A5;
+  background: var(--color-alert-red-surface);
+  color: var(--color-alert-red);
 }
 
 .diff-line.header {
   color: var(--color-violet-primary);
-  background: rgba(139, 124, 255, 0.08);
+  background: var(--color-surface-elevated);
 }
 
 .diff-line-num {
@@ -1081,12 +1082,12 @@
 }
 
 .patch-state-tag.proposed {
-  border-color: rgba(214, 164, 93, 0.4);
+  border-color: var(--color-border-default);
   color: var(--color-amber-primary);
 }
 
 .patch-state-tag.restored {
-  border-color: rgba(69, 201, 165, 0.4);
+  border-color: var(--color-success);
   color: var(--color-teal-primary);
 }
 
@@ -1159,15 +1160,15 @@
 }
 
 .checklist-badge.pass {
-  background: var(--color-teal-surface);
-  color: var(--color-teal-primary);
-  border: 1px solid rgba(69, 201, 165, 0.4);
+  background: var(--color-success-surface);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
 }
 
 .checklist-badge.fail {
   background: var(--color-alert-red-surface);
   color: var(--color-alert-red);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  border: 1px solid var(--color-alert-red);
 }
 
 /* ── Screen: Case History ────────────────────────────────────── */
@@ -1203,7 +1204,7 @@
 }
 
 .cases-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--color-surface-elevated);
 }
 
 .table-case-id {
@@ -1308,6 +1309,18 @@
 
 .event-msg {
   color: var(--color-text-primary);
+}
+
+/* Keep the pale palette crisp and readable across all information panels. */
+.capability-card,
+.form-main-card,
+.form-telemetry-card,
+.timeline-card,
+.dossier-banner,
+.detail-card,
+.cases-table-card,
+.settings-card {
+  box-shadow: var(--shadow-elevation);
 }
 
 /* ── Responsive adjustments ──────────────────────────────────── */
