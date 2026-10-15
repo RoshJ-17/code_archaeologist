@@ -110,25 +110,25 @@ export const CaseHistoryPage: React.FC<CaseHistoryPageProps> = ({
                     </td>
                     <td>
                       {r.outcome === 'VERIFIED' && (
-                        <span className="trench-badge" style={{ background: 'var(--color-teal-surface)', color: 'var(--color-teal-primary)', border: '1px solid rgba(69,201,165,0.4)' }}>
+                        <span className="trench-badge" style={{ background: 'var(--color-success-surface)', color: 'var(--color-success)', border: '1px solid var(--color-success)' }}>
                           <CheckCircle2 size={11} />
                           VERIFIED
                         </span>
                       )}
                       {r.outcome === 'REJECTED' && (
-                        <span className="trench-badge" style={{ background: 'var(--color-alert-orange-surface)', color: 'var(--color-alert-orange)', border: '1px solid rgba(245,158,11,0.4)' }}>
+                        <span className="trench-badge" style={{ background: 'var(--color-alert-orange-surface)', color: 'var(--color-alert-orange)', border: '1px solid currentColor' }}>
                           <AlertOctagon size={11} />
                           REJECTED
                         </span>
                       )}
                       {r.outcome === 'QA_FAILED' && (
-                        <span className="trench-badge" style={{ background: 'var(--color-alert-red-surface)', color: 'var(--color-alert-red)', border: '1px solid rgba(239,68,68,0.4)' }}>
+                        <span className="trench-badge" style={{ background: 'var(--color-alert-red-surface)', color: 'var(--color-alert-red)', border: '1px solid currentColor' }}>
                           <AlertTriangle size={11} />
                           QA FAIL
                         </span>
                       )}
                       {r.outcome === 'INCONCLUSIVE' && (
-                        <span className="trench-badge" style={{ background: 'var(--color-alert-orange-surface)', color: 'var(--color-alert-orange)', border: '1px solid rgba(245,158,11,0.4)' }}>
+                        <span className="trench-badge" style={{ background: 'var(--color-alert-orange-surface)', color: 'var(--color-alert-orange)', border: '1px solid currentColor' }}>
                           INCONCLUSIVE
                         </span>
                       )}
